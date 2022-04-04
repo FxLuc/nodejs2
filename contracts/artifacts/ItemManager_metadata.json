@@ -1,0 +1,310 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "itemIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "state",
+						"type": "uint8"
+					}
+				],
+				"name": "ItemStateChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_specifications",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_rawDataHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "createItem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentItemIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "items",
+				"outputs": [
+					{
+						"internalType": "contract Item",
+						"name": "_item",
+						"type": "address"
+					},
+					{
+						"internalType": "contract Order",
+						"name": "_order",
+						"type": "address"
+					},
+					{
+						"internalType": "enum ItemManager.ItemState",
+						"name": "_state",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_itemIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "triggerCancel",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_itemIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "triggerDelivered",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_itemIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_purchaser",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "triggerPayment",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_itemIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "triggerResale",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ItemManager.sol": "ItemManager"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Context.sol": {
+			"keccak256": "0x2fe6342b0e5410e66685c0366837a364dd0932fc603f2a0dc2c85c570c7986cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c36b67edfdd95d6bcea3a8998f4da10e2a255ed81f80461028eac40a5c38cd7f",
+				"dweb:/ipfs/QmedK49dSWRKtH3q4sxHDocWnpczF1NJDRw76XJHdHpuV4"
+			]
+		},
+		"Counters.sol": {
+			"keccak256": "0x855bc269fd0d92cd595f8653be18b75e9f32dc0e6ec28499beabcaf906b16abe",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5c57a0ff890bd72d388bbc0bcfe70d19fbebc50a5bd86ad4295ed23f9d3c4a0d",
+				"dweb:/ipfs/QmeAFZkiDKDetBp3AFN4tosf4wNMZJ9yiuuwMXaEjvjMK9"
+			]
+		},
+		"Item.sol": {
+			"keccak256": "0x2246511ab39dcd6a1b3c6db56416a26fd59c4c0f0d97d4924d15d51632cb13ea",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cbfcefca0802e0cd6cbaec116bf3927e60b5b620f3cf4e899802f530ebfddd9e",
+				"dweb:/ipfs/QmVCgkmJPJukQf2ZgRBG5xd5pmAAp8p7szcupFwyGdggqp"
+			]
+		},
+		"ItemManager.sol": {
+			"keccak256": "0x834e2a687c599daab3a75e8524334e6b44f986f2452bb3d90858014ab563c6c1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d2eed3d1c9ca71aebee7dedc663033c98c75bf8fefd8f6082fb58baae06d25d3",
+				"dweb:/ipfs/QmcST5VHpUQtckM2hgbBo2uvhviT58MrdzvUyk8pgjziPS"
+			]
+		},
+		"Order.sol": {
+			"keccak256": "0x78a5822dee099b18f8ad71f6de6f3d742ba40358afc58eee2508fc2ced29b8ad",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4f92103da3c6961a2849a3f278c76205d07bbacae60cbd42c790f9dacb2002a0",
+				"dweb:/ipfs/QmUR8ShH7Z3QTsiJLiY7QEKcQ366rXtmMPQYZhy6mSdvkF"
+			]
+		},
+		"Ownable.sol": {
+			"keccak256": "0x96a6fcdefb00551143085b977414ff61df2bfcc050a4ee03653b52806feda0fb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0b161fd2cdbf0a394f01f2b2960a5adec7b4e77db2d2d3d8b8ec80e84a8f37b1",
+				"dweb:/ipfs/QmZTDEXUJeZiGwVXz8HEUAiu273tCEfGsALhzYyNYYdkZC"
+			]
+		},
+		"Timers.sol": {
+			"keccak256": "0x49480a98376466127d769a79ffe8464db178d76873a9532e5511082bf578d4f2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f4074d1e6e117ca514393a305a807d34029303005f99375ad107d22c1d8c0f25",
+				"dweb:/ipfs/QmRRuwCrHonpLWsfB83iJSSXcv4bqYfFwYhKRZSHh23o6Q"
+			]
+		}
+	},
+	"version": 1
+}
